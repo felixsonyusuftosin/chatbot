@@ -1,0 +1,22 @@
+@import "nativescript-theme-core/css/core.light.css";
+.whitebg{background-color:#fff;}
+/* Your CSS goes here */
+
+.truncate{width:98%; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+.neue{font-family: Neue Helvetica;} .conduit{font-family:Conduit;}
+.corporate{font-family:Corporate;} .alega{font-family: Alega OT;}
+.OpenSans{font-family:Open Sans;} Raleway{font-family:Raleway;}
+.lgblue2{ }
+.lgblue{
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#009ee8+0,00aeed+50,00c0f0+100 */
+background: #009ee8; /* Old browsers */
+background: -moz-radial-gradient(center, ellipse cover,  #009ee8 0%, #00aeed 50%, #00c0f0 100%); /* FF3.6-15 */
+background: -webkit-radial-gradient(center, ellipse cover,  #009ee8 0%,#00aeed 50%,#00c0f0 100%); /* Chrome10-25,Safari5.1-6 */
+background: radial-gradient(ellipse at center,  #009ee8 0%,#00aeed 50%,#00c0f0 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#009ee8', endColorstr='#00c0f0',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+
+}
+.font-awesome {
+    font-family: "FontAwesome";
+}

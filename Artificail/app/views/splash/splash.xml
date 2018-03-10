@@ -1,0 +1,6 @@
+<Page loaded="pageLoaded" actionBarHidden="true">
+<StackLayout verticalALignment = "center" HorrizontalAlignment = "center" class = "bluebg" id="logocontainer">
+
+
+</StackLayout>
+</Page>

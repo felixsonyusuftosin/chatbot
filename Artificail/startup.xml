@@ -1,0 +1,42 @@
+
+<aiml version="1.0.1" encoding="UTF-8">
+<!-- basic_chat.aiml -->
+<category>
+    <pattern>LOAD AIML B</pattern>
+    <template><srai>Hello <star/></srai></template>
+    </category>    
+    <category>
+        <pattern>LOAD AIML B</pattern>
+        <template>
+        <learn>setup.aiml</learn>
+        <learn>politics.aiml</learn>
+        <learn>ready/religion.aiml</learn>
+        <learn>ready/religion.aiml</learn>
+        <learn>ready/biography.aiml</learn>
+        <learn>ready/bot_profile.aiml</learn>
+        <learn>ready/client.aiml</learn>
+        <learn>ready/computers.aiml</learn>
+        <learn>ready/continuation.aiml</learn>
+        <learn>ready/default.aiml</learn>
+        <learn>ready/drugs.aiml</learn>
+        <learn>ready/emotion.aiml</learn>
+        <learn>ready/date.aiml</learn>
+        <learn>ready/geography.aiml</learn>
+        <learn>ready/history.aiml</learn>
+        <learn>ready/hmor.aiml</learn>
+        <learn>ready/inquiry.aiml</learn>
+        <learn>ready/knowledge.aiml</learn>
+        <learn>ready/mone.aiml</learn>
+        <learn>ready/movies.aiml</learn>
+        <learn>ready/psychology.aiml</learn>
+        <learn>ready/salutations.aiml</learn>
+        <learn>ready/sports.aiml</learn>
+        <learn>ready/xfind.aiml</learn>
+        <learn>ready/alice.aiml</learn>
+        <learn>ready/astrology.aiml</learn>
+        <learn>ready/client_profile.aiml</learn>
+         <learn>ready/drugs.aiml</learn>
+        </template>
+    </category>
+    
+</aiml>

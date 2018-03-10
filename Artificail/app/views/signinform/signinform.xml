@@ -1,0 +1,57 @@
+<Page loaded="pageLoaded" class = "urban" actionBarHidden="true">
+  <ScrollView>
+<GridLayout rows = "auto,auto,  auto, auto,  auto, *" columns = "*" class = "padding"  id = "one">
+  <AbsoluteLayout row = "0", cols = "0"  visibility="{{showLoading ? 'visible' : 'collapsed' }}">
+  <StackLayout  orientation = "vertical" class = "stack full" verticalAlignment = "center" horizontalAlignment = "center"  visibility="{{showLoading ? 'visible' : 'collapsed' }}" >
+    <ActivityIndicator horizontalAlignment = "center"  verticalAlignment = "center"   busy= "{{showLoading}}" /> 
+  </StackLayout>
+ </AbsoluteLayout>
+<StackLayout class = "padtob" row = "0" verticalAlignment = "center" horizontalAlignment = "center"  visibility="{{ !showshowLoading ? 'visible' : 'collapsed' }}" >
+  <Label  class = "topbebas nmargin" text = "Sprint Loans 24 "/>  
+  <Label class = "top" text = "SIGN IN"/>
+  <Label class = "box"  verticalAlignment = "center" />
+</StackLayout>
+<StackLayout class = "error" row = "1" orientation = "horizontal" visibility="{{ showdetails ? 'visible' : 'collapsed' }}" >
+  <Label class  = "h"  text = "&#xf071;" />
+  <Label textWrap = "true" text = "{{details}}" />
+</StackLayout>
+ 
+<StackLayout  row = "2" class = "arrange" verticalAlignment = "bottom" horizontalAlignment = "center">
+<StackLayout class = "mg"  rows= "auto" orientation = "horizontal">
+<Label  class = "i" horizontalAlignment = "left"   text = "&#xf2c0;" row = "0" column = "0" />
+ <TextField hint="Telephone Number" keyboardType="phone"  text = "{{username}}" horrizontalAlgnment = "center" column = "1" row= "0" autocorrect="false" autocapitalizationType="none"  style.placeholderColor="white"  />
+</StackLayout>
+<StackLayout class = "mg"  rows= "auto" orientation = "horizontal">
+<Label  class = "i" horizontalAlignment = "left"   text = "&#xf023;" row = "0" column = "0" />
+ <TextField hint="Password" keyboardType="email"  text = "{{password}}" horrizontalAlgnment = "center" column = "1" row= "0" secure = "true" autocorrect="false" autocapitalizationType="none"  style.placeholderColor="white" />
+</StackLayout>
+</StackLayout>
+
+<StackLayout row = "3" verticalAlignment = "top" horizontalAlignment = "center" >
+ <Button class = "mgbtn" text = "SIGN IN" visibility="{{ !showLoading ? 'visible' : 'collapsed' }}"  onTap = "signinm"/>
+  <ActivityIndicator horizontalAlignment = "center"  verticalAlignment = "center"   busy= "{{ showLoading}}" />
+ <StackLayout orientation = "horizontal"  class = "mhold">
+ <Label class = "divs" horizontalAlignment = "left" verticalAlignment = "bottom"/>
+<Label  horizontalAlignment = "center" verticalAlignment = "bottom" text = "OR"/>
+<Label class = "divs" horizontalAlignment = "right" verticalAlignment = "bottom"/>
+</StackLayout>
+  <StackLayout row = "3" class = "abs" verticalAlignment = "center"  visibility="{{ showLoading ? 'visible' : 'collapsed' }}" horizontalAlignment = "center" >
+<ActivityIndicator horizontalAlignment = "center"  verticalAlignment = "center"   busy= "{{showLoading}}" />
+  </StackLayout> 
+</StackLayout>
+<!--<StackLayout  class = "yellow"  row = "3" orientation = "horizontal" verticalAlignment = "top">
+<Label  class = "yLabel" text = "&#xf09a;" horizontalAlignment = "center"/>
+<Label  class = "y2" text = "Sign up with facebook"   horizontalAlignment= "right"/>
+</StackLayout>-->
+<StackLayout row = "4" tap = "signup" orientation = "horizontal" horizontalAlignment = "center" verticalAlignment = "top">
+<Label class = "open" text = "Dont have an account ? " />
+<Label class = "open bb" text = "Sign Up" />
+</StackLayout>
+<StackLayout class = "under"  row = "5" horizontalAlignment = "center"  orientation = "vertical">
+ <StackLayout  horizontalAlignment = "center"  orientation = "horizontal"> <Label class = "c1" text = "Privacy" /> <label class = "c1" text = "Legal" /></StackLayout>
+ <Label editable="false"  textWrap="true" class = "clm class" text = "Copyright &copy; 2017 Sprint Loans24. All right reserved"/>
+ <Label editable="false" textWrap="true"  class = "class" text = "Consumer advisory - Sprint Loans LTD, the holder of Sprint Loans 24 reserve the right to distribution, and authorizations of loans as it deem fit, we require access to your financial information like bank records and BVN information, It currently operates only in Nigeria."/>
+</StackLayout>
+</GridLayout>
+  </ScrollView>
+</Page>

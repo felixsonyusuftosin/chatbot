@@ -1,0 +1,53 @@
+
+<aiml version="1.0.1" encoding="UTF-8">
+<!-- basic_chat.aiml -->
+     <category>
+    <pattern>HELLO *</pattern>
+    <template>
+    <random>
+        <li>Well hello, welcome to rentright can you introduce your self please ?</li>
+           <li>Well how may i help you please ? </li>
+         <li>Top of the day to you?</li>
+         <li>How may we proceed?</li>
+    </random>
+    </template>
+    </category>
+     <category>
+    <pattern>HELLO</pattern>
+    <template>
+       <random>
+        <li>Well hello, welcome to rentright can you introduce your self please ?</li>
+           <li>Well how may i help you please ? </li>
+         <li>Top of the day to you?</li>
+         <li>How may we proceed?</li>
+    </random>
+    
+    </template>
+    </category>  
+    <category>
+    <pattern>HI *</pattern>
+    <template><srai>HELLO <star/></srai></template>
+    </category>  
+    <category>
+    <pattern>GOOD *</pattern>
+    <template><srai>HELLO <star/></srai></template>
+
+    </category> 
+       <category>
+    <pattern>PLEASE *</pattern>
+    <template><srai>HELLO <star/></srai></template>
+    </category> 
+       <category>
+    <pattern>I *</pattern>
+    <template><srai>HELLO <star/></srai></template>
+    </category> 
+
+
+    <category>
+        <pattern>WHAT ARE YOU</pattern>
+        <template>
+            I'm a bot, silly!
+        </template>
+    </category>
+    
+</aiml>

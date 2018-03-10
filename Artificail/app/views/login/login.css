@@ -1,0 +1,16 @@
+Image{
+height:150;
+}
+.urban{background-image:url('~/images/urban1.jpg'); background-size:cover; background-position:center;  }
+.padding{ background-color:rgba(0,0,0,0.6);  padding:40 0;  padding-bottom:0; box-sizing:border-box; }
+.header{font-size:20px; display:block; line-height:25px; margin-top:30;  margin-bottom:30;   word-wrap:break-word; text-align:center;   padding:0; font-family:Open Sans;   font-weight:400;   color:#fff;  box-sizing:border-box;}
+.blueb{background-color: #009ee8; margin-top:30;  margin-bottom:10; color:#fff; border-radius:15px; height:50; font-size:18; font-family:Raleway-Bold; }
+.whiteb{background-color: #fff; margin-top:30;  margin-bottom:30; color:#009ee8;  border-radius:15px;  border-style:solid; border-width:2px; border-color:#009ee8; height:50; font-size:18; font-family:Sans-serif; }
+.topbebas{font-family:"BebasNeue"; color:#fff; color: #009ee8;  text-align:center; font-size:35px; letter-spacing:0.06;  font-weight:600; }
+.top{font-family:"BebasNeue";  text-align:center; font-weight:700; letter-spacing:0.2;  font-size:25px; line-height:40px;  color:#fff; }
+.mid{font-family:"Lato-Medium";  text-align:center; font-size:15px; line-height:20px;  color:#fff;  }
+
+.font-awesome{ font-family:"fontawesome-webfont";  text-align:center; font-size:12px; line-height:30px;   color:rgba(255,255,255,0.5);}
+.whitef{font-family:"fontawesome-webfont";  text-align:center; font-size:12px; line-height:30px;   color:#fff;}
+.btn{height:45; border-style:none; width:200;  font-family:"Montserrat-Medium";  color:#fff; background-color:#009ee8;  border-radius:15;}
+

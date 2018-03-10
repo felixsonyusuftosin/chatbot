@@ -1,0 +1,22 @@
+  module.exports = {
+  remote :'https://siberobinsion:password@siberobinsion.cloudant.com/sprintusers',
+  username  : 'horearlyingsterseemingli',
+  password :  'c4c49a69b925fc73e9ea8d11a0720ce9fb9fa0c8' ,
+  rem: "https://horearlyingsterseemingli:c4c49a69b925fc73e9ea8d11a0720ce9fb9fa0c8@siberobinsion.cloudant.com/sprintusers",
+  accountinfo: "https://siberobinsion:password@siberobinsion.cloudant.com/accountinfo",
+  publicapikey: "pubkey-f6942d480a0386ac59531eb90fe980ff",
+  secretapikey: "key-af610fc9d3b2a1543c0366d12d91bac0",
+  friendlyname:"33644646078",
+  accountsid:'d3c46823e326bafac3085a566146f131',
+  authtoken:'3b155acc63fe0ea70e457c93aa47416d',
+  phonenumber: '+33644646078',
+  subacct:'SPRINTLOANS',
+ owneremail:'felixsonyusuftosin@gmail.com',
+ subacctpassword:'Yahooze_11', 
+sender:'Sprint Loans 24',
+paystackkey:'pk_test_746be3210ea973d9f18943f5d0336ba33eb8bcd8',
+paystacktest:'sk_test_c55a9a561e262d48585ca305af07c2d68ee243ef', 
+eligibilityMapping: {'30':'10000', '40':'15000', '50':'20000', '60':'25000', '70':'30000', '80':'35000', '100':'40000' },
+ftestmkey : "tk_9h48JZcGWw",
+ftestapikey: "tk_L1T04bMxaQKh5fW7Yzmw"
+  }

@@ -1,0 +1,567 @@
+<Page loaded="pageLoaded" actionBarHidden="true">
+<GridLayout rows = "*" columns = "*"  >
+<GridLayout  rows = "auto" columns = "*" class = "pin" visibility="{{ pinshow ? 'visible' : 'collapsed' }}"> 
+ <StackLayout  row = "0"  class = "cover" horizontalAlignment = "center" verticalAlignment = "center">
+<StackLayout class = "padtob" row = "0" verticalAlignment = "center" horizontalAlignment = "center">
+  <Label  class = "topbebas" textWrap="true"  text = "This device is registered please sign in to continue. "/>  
+
+  <Label class = "box"  verticalAlignment = "center" />
+</StackLayout>
+ 
+<StackLayout class = "error" row = "1" orientation = "horizontal" visibility=" {{  notcorrect ? 'visible' : 'collapsed' }}" >
+  <Label class  = "h"  text = "&#xf071;" />
+  <Label textWrap = "true" text = "Please supply the preregistered pin for this App" />
+</StackLayout>
+
+
+
+ <StackLayout class = "mg"  rows= "auto" orientation = "horizontal">
+
+<Label  class = "ii" horizontalAlignment = "left"   text = "&#xf023;" row = "0" column = "0" />
+ <TextField  class = "TextField" hint="4 DIGITS PIN" keyboardType="number" id = "pin"  text = "{{suppliedpin}}" horizontalAlignment = "center" column = "1" row= "0" secure = "true" autocorrect="false" autocapitalizationType="none"  style.placeholderColor="white" />
+</StackLayout><!--input-->
+<StackLayout  verticalAlignment = "top" horizontalAlignment = "center" >
+ <Button class = "mgbtn" text = "GO"  onTap = "log"/>
+</StackLayout><!--button-->
+ </StackLayout><!--cover-->
+ </GridLayout>
+
+<StackLayout orientation = "horizontal" class = "dark"  visibility="{{ !pinshow ? 'visible' : 'collapsed' }}" >
+
+<GridLayout class = "left" rows = "auto,auto,auto,auto,auto,auto,*" columns = "*">
+ <StackLayout row = "0"  orientation = "vertical" verticalAlignment = "center" horizontalAlignment = "center" objNode="profile"  tap = "btntap" class = "bel active" >
+ <Label  class = "i" text = "&#xf2bd;" /> <Label class = "span" textWrap = "true" text = "Profile setup"/>
+ </StackLayout>
+<StackLayout row = "3" orientation = "vertical" verticalAlignment = "center" horizontalAlignment = "center" objNode="details"  tap = "btntap" class = "bel" >
+ <Label  class = "i" text = "&#xf02c;" /> <Label class = "span"  textWrap = "true" text = "Account Details"/>
+ </StackLayout>
+ <StackLayout row = "1"  orientation = "vertical" verticalAlignment = "center" horizontalAlignment = "center" objNode="request"  tap = "btntap" class = "bel" >
+ <Label  class = "i" text = "&#xf006;" /> <Label class = "span"  textWrap = "true" text = "Request"/>
+ </StackLayout>
+ <StackLayout row = "2"  orientation = "vertical" verticalAlignment = "center" horizontalAlignment = "center" objNode="response"  tap = "btntap" class = "bel" >
+ <Label  class = "i" text = "&#xf130;" /> <Label class = "span"  textWrap = "true" text = "Return"/>
+ </StackLayout>
+  <StackLayout row = "4"  orientation = "vertical" verticalAlignment = "center" horizontalAlignment = "center"  objNode="request"  tap = "switch"  class = "bel" >
+ <Label  class = "i" text = "&#xf1e0;" /> <Label class = "span"  textWrap = "true" text = "Share"/> 
+ </StackLayout> 
+  <StackLayout row = "5"  orientation = "vertical" verticalAlignment = "center" horizontalAlignment = "center"  objNode="messages" tap = "" class = "bel" >
+ <Label  class = "i" text = "&#xf2b7;" /> <Label class = "span"  textWrap = "true" text = "Messages"/> 
+ </StackLayout> 
+ <StackLayout row = "6"  orientation = "vertical" verticalAlignment = "bottom" horizontalAlignment = "center"   objNode="settings" tap = "" class = "bel" >
+ <Label  class = "i blue" text = "&#xf1de;" /> <Label class = "span"  textWrap = "true"  text = "Settings"/> 
+ </StackLayout> 
+</GridLayout>
+
+<!---this is otherright the white part of the code that confuses me please never should you hide anymore ------------------------------------------------------------------------------>
+<!---this is otherright the white part of the code that confuses me please never should you hide anymore ------------------------------------------------------------------------------>
+<!---this is otherright the white part of the code that confuses me please never should you hide anymore ------------------------------------------------------------------------------>
+ <StackLayout class = "otherright" id = "otherright"  zIndex = "99" visibility="{{ submenu ? 'visible' : 'collapsed' }}"> 
+ <StackLayout orientation = "vertical"  visibility="{{ profile.main ? 'visible' : 'collapsed' }}" >
+ <GridLayout rows = "*" columns = "*">
+
+ <StackLayout row = "0", cols = "0" class = "one">
+<StackLayout  class = "pd nob dark"  orientation = "horizontal" verticalAlignment = "center">
+ <Label    class = "thin ash"  text = "Account Details "/>
+ <Label    class = "common blue" text = "BANK DETAILS"/>
+ </StackLayout>
+ <StackLayout class = "error2"  orientation = "horizontal" visibility=" {{ error ? 'visible' : 'collapsed' }}" >
+  <Label class  = "h"  text = "&#xf071;" />
+  <Label textWrap = "true" text = "{{errortext}}" />
+</StackLayout>
+
+<!--Visible on first page of this view -->
+ <GridLayout row = "1" columns = "*" rows = "auto, auto, auto" class = "column2"  visibility="{{ profile.child1 ? 'visible' : 'collapsed' }}"  >
+<Label class = "common gray lvl1" col = "0" text = "Your BVN Number" row = "0"/>
+<Label class = "thin lvl2 gray" col = "0" text = "BVN information not set up yet" row = "1" visibility="{{ !bvnstat ? 'visible' : 'collapsed' }}"/>
+<Label class = "thin lvl2 gray" col = "0" text = "BVN information is set up" row = "1" visibility="{{ bvnstat ? 'visible' : 'collapsed' }}"/>
+  <Label    class = "common blue" rows = "*" row = "2" text = "{{displaybvn}}"  visibility="{{ bvnstat ? 'visible' : 'collapsed' }}"/>
+ <TextField hint="BVN" keyboardType="number"  verticalAlignment = "bottom" text = "{{bvn}}"  visibility="{{ !bvnstat ? 'visible' : 'collapsed' }}"  secure = "false" autocorrect="false" autocapitalizationType="none"  style.placeholderColor="#999" class = "mgb" columns = "*"  rows = "*" row = "2"  />
+
+</GridLayout><!--grid-->
+<!--Visible on first page of this view  but can be toggled off by setting profile child2 to false-->
+ <GridLayout row = "1" columns = "*" rows = "auto, auto, auto" class = "column2"  visibility="{{ profile.child2 ? 'visible' : 'collapsed' }}" >
+<Label class = "common gray lvl1" col = "0" text = "Account number" row = "0"/>
+<Label class = "thin lvl2 gray" col = "0" text = "Account  numberis not set up yet" row = "1" visibility="{{ ! accountstat ? 'visible' : 'collapsed' }}"/>
+<Label class = "thin lvl2 gray" col = "0" text = "Account number is set up" row = "1" visibility="{{ accountstat ? 'visible' : 'collapsed' }}"/>
+  <Label    class = "common blue" rows = "*" row = "2" text = "{{displayaccount}}"  visibility="{{ bvnstat ? 'visible' : 'collapsed' }}"/>
+ <TextField hint="Account" keyboardType="number"   verticalAlignment = "bottom" text = "{{account}}"  visibility="{{ ! accountstat ? 'visible' : 'collapsed' }}"   secure = "false" autocorrect="false" autocapitalizationType="none"  style.placeholderColor="#999" class = "mgb" columns = "*"  rows = "*" row = "2"  />
+</GridLayout><!--grid-->
+
+<!--Visible on first page of this view  but can be toggled off by setting profile child2 to false-->
+ <GridLayout row = "1" columns = "*" rows = "auto, auto, auto" class = "column2 ashb"  visibility="{{ profile.child2 ? 'visible' : 'collapsed' }}" >
+<Label class = "common gray lvl1" col = "0" text = "Select Bank" row = "0"/>
+<Label class = "thin lvl2 gray" col = "0" text = "Select from the list of banks presented below"   visibility="{{ ! bankstat ? 'visible' : 'collapsed' }}" row = "1"/>
+<Label class = "thin lvl2 gray" col = "0" text = "Here is the selected bank for your transactions" row = "1"  visibility="{{ bankstat ? 'visible' : 'collapsed' }}"/>
+ <ListPicker  items="{{banks}}" class ="ashb"  col = "0"  row = "2"   visibility="{{ ! bankstat ? 'visible' : 'collapsed' }}"  id="bankpicker"></ListPicker> 
+   <Label    class = "common blue" rows = "*" row = "2" text = "{{selectedbank}}"  visibility="{{ bvnstat ? 'visible' : 'collapsed' }}"/>
+ </GridLayout><!--grid-->
+<!--Otp entry page visible on the profile child3 which should be the third page -->
+ <GridLayout row = "1" columns = "*" rows = "auto, auto, auto" class = "column2"  visibility="{{ profile.child3 ? 'visible' : 'collapsed' }}" >
+<Label class = "common gray lvl1" col = "0" text = "One Time PIN" row = "0"/>
+<Label class = "thin lvl2 gray" col = "0" text = "Please enter the OTP sent to your phone" row = "1"/>
+ <TextField hint="OTP" keyboardType="number"   verticalAlignment = "bottom" text = "{{otp}}"   secure = "false" autocorrect="false" autocapitalizationType="none"  style.placeholderColor="#999" class = "mgb" columns = "*"  rows = "*" row = "2"  />
+</GridLayout><!--grid-->
+<!--No use for now-->
+ <GridLayout row = "1" columns = "*" rows = "auto, auto, auto" class = "column2"  visibility="{{ profile.child4 ? 'visible' : 'collapsed' }}" >
+<Label class = "common gray lvl1" col = "0" text = "Account Number" row = "0"/>
+<Label class = "thin lvl2 gray" col = "0" text = "BVN information not set up yet" row = "1"/>
+ <TextField hint="Confirm OTP" keyboardType="number"   verticalAlignment = "bottom" text = "{{otp}}"   secure = "false" autocorrect="false" autocapitalizationType="none"  style.placeholderColor="#999" class = "mgb" columns = "*"  rows = "*" row = "2"  />
+</GridLayout><!--grid-->
+
+<!--buttons action grid-->
+<GridLayout columns = "*" rows = "auto, auto, auto" verticalAlignment = "bottom" >
+ <StackLayout col = "0" row = "2" orientation = "horizontal" horizontalAlignment = "center" verticalAlignment = "top">
+<!--tap to go back to main profile--><Button class = "mgbtn33 fa"   minWidth = "80" horizontalAlignment = "center"  verticalAlignment = "top" text = "&#xf04a;"   objNode="profile"  tap = "switch"  visibility="{{  !allverified  &amp;&amp; !loading &amp;&amp;  !profile.child3 &amp;&amp; !profile.child4  ? 'visible' : 'collapsed'   }}"/>
+<!--go back show only while loading--><Button class = "mgbtn33 fa"   minWidth = "80" horizontalAlignment = "center"   verticalAlignment = "top" text = "&#xf04a;"    visibility="{{  !allverified  &amp;&amp; loading &amp;&amp;  !profile.child3 &amp;&amp; !profile.child4 ? 'visible' : 'collapsed'  }} "/>
+<!--go to first page of this view--><Button class = "mgbtn33 fa"   minWidth = "80" horizontalAlignment = "center"   verticalAlignment = "top" text = "&#xf04a;"   objNode="profile"  tap = "previousotp"  visibility="{{  !allverified  &amp;&amp; !loading  &amp;&amp;  profile.child3 &amp;&amp; !profile.child4 ? 'visible' : 'collapsed'   }}"/>
+<!--tap to register your bvn and go to otp--><Button class = "mgbtn3"  minWidth = "80"  horizontalAlignment = "center"  verticalAlignment = "top" text = "Register"   objNode="otp"  tap = "registerbvn" visibility="{{  !allverified  &amp;&amp; !loading  &amp;&amp; !profile.child3 &amp;&amp; !profile.child4 &amp;&amp; bvnstat ? 'visible' : 'collapsed'  }}"/>
+ <!--no use for now--><Button class = "mgbtn3"  minWidth = "80" horizontalAlignment = "center"   verticalAlignment = "top" text = "Register"   objNode="otp"  tap = "registerbvn" visibility="{{ !allverified  &amp;&amp; !loading  &amp;&amp; !profile.child3 &amp;&amp; !profile.child4  &amp;&amp; !bvnstat  ? 'visible' : 'collapsed' }}"/>
+ <!--inactive display while loading--><Button class = "mgbtn3"  minWidth = "80" horizontalAlignment = "center"   verticalAlignment = "top" text = "Loading"    visibility="{{  !allverified  &amp;&amp; loading  &amp;&amp;  !profile.child3 &amp;&amp; !profile.child4 ? 'visible' : 'collapsed' }}"/>
+ <!--tap to register otp--> <Button class = "mgbtn3"  minWidth = "80" horizontalAlignment = "center"   verticalAlignment = "top" text = "Submit" tap = "registerotp"   visibility="{{  !allverified  &amp;&amp; !loading   &amp;&amp; !profile.child4 &amp;&amp;  profile.child3 ? 'visible' : 'collapsed'   }}"/>
+  </StackLayout>
+</GridLayout><!--grid-->
+<StackLayout orientation = "vertical"     class = "colu"  visibility="{{  allverified  ? 'visible' : 'collapsed'   }}" >
+<Label class = "common blue lvl11 m4 center b" row = "0" text = "NOTICE " row = "0"/>
+<!--display if all information is verified --> <Label class = "common gray lvl1 m2 center  b" textWrap = "true" row = "1" text = "Your Account Data is uptodate" row = "0"  visibility="{{  allverified  ? 'visible' : 'collapsed'   }}"/>
+<!--display if all information is verified --> <Label class = "thin lvl2 gray  m2 center "  textWrap = "true" row = "2" text = "If you require to change any of these information please follow the direction given in the FAQ section" row = "1" visibility="{{ allverified  ? 'visible' : 'collapsed'  }}"/>
+</StackLayout>  
+
+</StackLayout><!--control-->
+  <AbsoluteLayout row = "0", cols = "0"  visibility="{{ loading ? 'visible' : 'collapsed' }}">
+  <StackLayout  orientation = "vertical" class = "stack full" verticalAlignment = "center" horizontalAlignment = "center"  visibility="{{ loading ? 'visible' : 'collapsed' }}" >
+    <ActivityIndicator horizontalAlignment = "center"  verticalAlignment = "center"   busy= "{{loading}}" /> 
+  </StackLayout>
+ </AbsoluteLayout>
+</GridLayout><!--transpoverlay-->
+ </StackLayout><!--profile main-->
+ 
+ 
+ <!-----------------------request main is visible -------------------------------------------------------------------------------->
+
+ <GridLayout columns = "*" rows = "*"  class = "fullheight "  visibility = "{{ request.main   ? 'visible' : 'collapsed' }}" >
+   <AbsoluteLayout row = "0", cols = "0"  visibility="{{ loading ? 'visible' : 'collapsed' }}">
+  <StackLayout  orientation = "vertical" class = "stack full" verticalAlignment = "center" horizontalAlignment = "center"  visibility="{{ loading ? 'visible' : 'collapsed' }}" >
+    <ActivityIndicator horizontalAlignment = "center"  verticalAlignment = "center"   busy= "{{loading}}" /> 
+  </StackLayout>
+ </AbsoluteLayout>
+  <GridLayout col = "0" id = "pays"   columns = "*" rows = "auto,*" row = "0" class = "fullheight bggg" visibility = "{{ request.main     &amp;&amp;    request.child3  &amp;&amp; !loading  ? 'visible' : 'collapsed' }}" >
+  <StackLayout orientation = "horizontal"  class = "ok" verticalAlignment = "center" row="0" col = "0" >
+    <Label class = "common ash lvl2 m2 center  b"  horizontalAlignment = "left" verticalAlignment = "center" text = "Click to proceed" visibility="{{ proceed ? 'visible' : 'collapsed' }}"/>
+       <Label class = "common ash lvl2 m2 center  b"  horizontalAlignment = "left" verticalAlignment = "center" text = "Perform transaction" visibility="{{ !proceed ? 'visible' : 'collapsed' }}"/>
+     <Button class = "mgbtnii ib nb"   horizontalAlignment = "right"  verticalAlignment = "center" minWidth = "70"  text = "Proceed"   visibility="{{ proceed ? 'visible' : 'collapsed' }}"  tap = "proceedpayment" />
+  </StackLayout>
+   <WebView id = "payview" src = ""  col = "0" row = "1" />
+ </GridLayout>
+
+ <!---child 1--->
+ <StackLayout col = "0" row = "0" class = "fullheight" visibility = "{{request.main &amp;&amp;!topay  &amp;&amp; request.child1  ? 'visible' : 'collapsed' }}">
+ <StackLayout  class = "pd nob dark"  orientation = "horizontal" verticalAlignment = "center">
+ <Label    class = "thin ash"  text = "About Sprint Point Definations "/>
+ <Label    class = "common blue" text = "And Terms "/>
+ </StackLayout> 
+ <GridLayout rows = "auto, auto, *" columns = "*" >
+
+ <GridLayout row = "0" col = "0" columns = "*" rows = "auto, auto, auto, auto,auto " class = "column2 nob"  visibility = "{{request.main    &amp;&amp; !loading  &amp;&amp;  request.child1 &amp;&amp; !request.child2 &amp;&amp; !request.child3   ? 'visible' : 'collapsed' }}">
+<Label class = "common gray lvl111" col = "0" text = "About your eligibility" row = "0"/>
+<Label class = " lvl222 gray" textWrap = "true" col = "0" text = "{{explanation1}}" row = "1" />
+<Label class = " lvl222 gray" textWrap = "true" col = "0" text = "{{explanation2}}" row = "2" />
+<Label class = " lvl222 gray" textWrap = "true" col = "0" text = "{{explanation3}}" row = "3" />
+<Label class = " lvl222 gray" textWrap = "true" col = "0" text = "{{explanation14}}" row = "4" />
+ </GridLayout><!--grid--> 
+
+ 
+ <StackLayout row = "1" col = "0" verticalAlignment = "center"   orientation = "vertical">
+ <StackLayout  horizontalAlignment = "left"  class = "column2c">
+ <Label class = "common gray lvl1 ashg "  horizontalAlignment = "left" text = "Share this App" />
+ </StackLayout>
+  <StackLayout  orientation = "horizontal"  horizontalAlignment = "center"><StackLayout class = "icobox facebook" verticalAlignment = "center" horizontalAlignment = "right" tap = "share"><Label text = "&#xf09a;" /></StackLayout> <StackLayout  class = "icobox instagram" verticalAlignment = "center" horizontalAlignment = "left" tap = "share" ><Label text = "&#xf16d;" /></StackLayout></StackLayout><!--firstrow for box-->
+  <StackLayout  orientation = "horizontal"  horizontalAlignment = "center"><StackLayout class = "icobox twitter" verticalAlignment = "center" horizontalAlignment = "right" tap = "share"><Label text = "&#xf099;" /></StackLayout> <StackLayout  class = "icobox linkedin" verticalAlignment = "center" horizontalAlignment = "left" tap = "share" ><Label text = "&#xf0e1;" /></StackLayout></StackLayout><!--firstrow for box-->
+
+ </StackLayout><!--boxr-->
+ <StackLayout  row = "2" col = "0" verticalAlignment = "bottom" style = "width:100%;" orientation = "horizontal" class = "column2 nob" visibility = "{{request.main &amp;&amp;   request.child1  ? 'visible' : 'collapsed' }}">
+ <StackLayout verticalAlignment = "bottom" style = "width:50%;" orientation = "vertical" objNode="request" tap = "switch"  horizontalAlignment = "left">
+ <Label  verticalAlignment = "bottom" class = "lvl2 dgray1"  horizontalAlignment = "left" text = "Go to Previous" />
+ <StackLayout orientation = "horizontal">
+   <Label  verticalAlignment = "bottom" class = "cu" horizontalAlignment = "left" text = "&#xf0d9;"/>
+  <Label  verticalAlignment = "bottom" class = "lvl2 dgray"   horizontalAlignment = "right" text = "request Page"/>
+  </StackLayout>
+ </StackLayout>
+  <StackLayout verticalAlignment = "bottom"  style = "width:50%;"  orientation = "vertical" horizontalAlignment = "right">
+ <Label class = "lvl2 dgray1" verticalAlignment = "bottom" horizontalAlignment = "right" text = "Report to us"/>
+  <Label class = "lvl2 dgray" verticalAlignment = "bottom" horizontalAlignment = "right" text = "Share a story"/>
+ </StackLayout>
+ </StackLayout>
+ </GridLayout><!--positioner-->
+ 
+ 
+ </StackLayout><!--child1-->
+  <!--child2---->
+
+  <StackLayout col = "0" row = "0" class = "fullheight" visibility = "{{request.main  &amp;&amp; request.child2  &amp;&amp;! request.child1  ? 'visible' : 'collapsed' }}">
+ </StackLayout> 
+ </GridLayout><!--request main-->
+ 
+ 
+ 
+  <!-----------------------return main is visible -------------------------------------------------------------------------------->
+
+ <GridLayout columns = "*" rows = "*"  class = "fullheight "  visibility = "{{ return.main   ? 'visible' : 'collapsed' }}" >
+   <AbsoluteLayout row = "0", cols = "0"  visibility="{{ loading ? 'visible' : 'collapsed' }}">
+  <StackLayout  orientation = "vertical" class = "stack full" verticalAlignment = "center" horizontalAlignment = "center"  visibility="{{ loading ? 'visible' : 'collapsed' }}" >
+    <ActivityIndicator horizontalAlignment = "center"  verticalAlignment = "center"   busy= "{{loading}}" /> 
+  </StackLayout>
+ </AbsoluteLayout>
+  <GridLayout col = "0" id = "pays"   columns = "*" rows = "auto,*" row = "0" class = "fullheight bggg" visibility = "{{ return.main     &amp;&amp; !loading  ? 'visible' : 'collapsed' }}" >
+  <StackLayout orientation = "horizontal"  class = "ok" verticalAlignment = "center" row="0" col = "0" >
+    <Label class = "common ash lvl2 m2 center  b"  horizontalAlignment = "left" verticalAlignment = "center" text = "Click to proceed" visibility="{{ proceed ? 'visible' : 'collapsed' }}"/>
+       <Label class = "common ash lvl2 m2 center  b"  horizontalAlignment = "left" verticalAlignment = "center" text = "Perform transaction" visibility="{{ !proceed ? 'visible' : 'collapsed' }}"/>
+     <Button class = "mgbtnii ib nb"   horizontalAlignment = "right"  verticalAlignment = "center" minWidth = "70"  text = "Proceed"   visibility="{{ proceed ? 'visible' : 'collapsed' }}"  tap = "proceedpayment2" />
+  </StackLayout>
+   <WebView id = "payview2" src = ""  col = "0" row = "1" />
+ </GridLayout>
+
+ <!---child 1--->
+ <StackLayout col = "0" row = "0" class = "fullheight" visibility = "{{return.main  ? 'visible' : 'collapsed' }}">
+ <StackLayout  class = "pd nob dark"  orientation = "horizontal" verticalAlignment = "center">
+ <Label    class = "thin ash"  text = "About Sprint Point Definations "/>
+ <Label    class = "common blue" text = "And Terms "/>
+ </StackLayout> 
+ <GridLayout rows = "auto, auto, *" columns = "*" >
+
+ <GridLayout row = "0" col = "0" columns = "*" rows = "auto, auto, auto, auto,auto " class = "column2 nob"  visibility = "{{return.main    &amp;&amp; !loading  ? 'visible' : 'collapsed' }}">
+<Label class = "common gray lvl111" col = "0" text = "About your eligibility" row = "0"/>
+<Label class = " lvl222 gray" textWrap = "true" col = "0" text = "{{explanation1}}" row = "1" />
+<Label class = " lvl222 gray" textWrap = "true" col = "0" text = "{{explanation2}}" row = "2" />
+<Label class = " lvl222 gray" textWrap = "true" col = "0" text = "{{explanation3}}" row = "3" />
+<Label class = " lvl222 gray" textWrap = "true" col = "0" text = "{{explanation14}}" row = "4" />
+ </GridLayout><!--grid--> 
+
+ 
+ <StackLayout row = "1" col = "0" verticalAlignment = "center"   orientation = "vertical">
+ <StackLayout  horizontalAlignment = "left"  class = "column2c">
+ <Label class = "common gray lvl1 ashg "  horizontalAlignment = "left" text = "Share this App" />
+ </StackLayout>
+  <StackLayout  orientation = "horizontal"  horizontalAlignment = "center"><StackLayout class = "icobox facebook" verticalAlignment = "center" horizontalAlignment = "right" tap = "share"><Label text = "&#xf09a;" /></StackLayout> <StackLayout  class = "icobox instagram" verticalAlignment = "center" horizontalAlignment = "left" tap = "share" ><Label text = "&#xf16d;" /></StackLayout></StackLayout><!--firstrow for box-->
+  <StackLayout  orientation = "horizontal"  horizontalAlignment = "center"><StackLayout class = "icobox twitter" verticalAlignment = "center" horizontalAlignment = "right" tap = "share"><Label text = "&#xf099;" /></StackLayout> <StackLayout  class = "icobox linkedin" verticalAlignment = "center" horizontalAlignment = "left" tap = "share" ><Label text = "&#xf0e1;" /></StackLayout></StackLayout><!--firstrow for box-->
+
+ </StackLayout><!--boxr-->
+ <StackLayout  row = "2" col = "0" verticalAlignment = "bottom" style = "width:100%;" orientation = "horizontal" class = "column2 nob" visibility = "{{return.main &amp;&amp;   return.child1  ? 'visible' : 'collapsed' }}">
+ <StackLayout verticalAlignment = "bottom" style = "width:50%;" orientation = "vertical" objNode="request" tap = "switch"  horizontalAlignment = "left">
+ <Label  verticalAlignment = "bottom" class = "lvl2 dgray1"  horizontalAlignment = "left" text = "Go to Previous" />
+ <StackLayout orientation = "horizontal">
+   <Label  verticalAlignment = "bottom" class = "cu" horizontalAlignment = "left" text = "&#xf0d9;"/>
+  <Label  verticalAlignment = "bottom" class = "lvl2 dgray"   horizontalAlignment = "right" text = "request Page"/>
+  </StackLayout>
+ </StackLayout>
+  <StackLayout verticalAlignment = "bottom"  style = "width:50%;"  orientation = "vertical" horizontalAlignment = "right">
+ <Label class = "lvl2 dgray1" verticalAlignment = "bottom" horizontalAlignment = "right" text = "Report to us"/>
+  <Label class = "lvl2 dgray" verticalAlignment = "bottom" horizontalAlignment = "right" text = "Share a story"/>
+ </StackLayout>
+ </StackLayout>
+ </GridLayout><!--positioner-->
+ 
+ 
+ </StackLayout><!--child1-->
+  <!--child2---->
+
+  <StackLayout col = "0" row = "0" class = "fullheight" visibility = "{{request.main  &amp;&amp; request.child2  &amp;&amp;! request.child1  ? 'visible' : 'collapsed' }}">
+ </StackLayout> 
+ </GridLayout><!--request main-->
+
+  
+ 
+ </StackLayout><!--internal-->
+ 
+ <!--end of otherright you hearrrrd --------------------------------------------------------------------------------------------------------------------------------------------------->
+ 
+ 
+ 
+ <!-- this is the profile page a version of right class visible when profile is visible edits brings in other right class -->  
+ <!-- this is the profile page a version of right class visible when profile is visible edits brings in other right class -->  
+ <!-- this is the profile page a version of right class visible when profile is visible edits brings in other right class -->
+ 
+<StackLayout   orientation = "vertical"   class = "right" visibility="{{ profile.main ? 'visible' : 'collapsed' }}"  id = "right" zIndex = "1" >
+ <GridLayout  columns = "auto, *" class = "pd " rows = "auto" >
+<StackLayout col = "0"  row = "0"  orientation = "horizontal" verticalAlignment = "center">
+ <Label    class = "thin ash"  text = "Welcome "/>
+ <Label    class = "common blue" text = "{{name}}"/>
+ </StackLayout>
+  <StackLayout  row = "0"   orientation = "horizontal"   horizontalAlignment="right" col = "1"  >
+   <Label class = "icon ash" text = "&#xf2c7; " horizontalAlignment="right"/>
+   <Label class = "icon ash" text = "&#xf085;" horizontalAlignment="right"/>
+</StackLayout>
+</GridLayout ><!--first grid-->
+<GridLayout columns = "*, auto" rows = "auto, auto,auto" class = "column" >
+<Label class = "common white lvl1" col = "0" text = "BVN Number" row = "0"/>
+<Label class = "thin lvl2 ash" col = "0" text = "BVN information not set up yet" row = "1" visibility="{{ ! bvnstat ? 'visible' : 'collapsed'  }}"/>
+<Label class = "thin lvl2 ash" col = "0" text = "BVN information is upto date" row = "1" visibility="{{ bvnstat ? 'visible' : 'collapsed'  }}"/>
+<Label class = "thin lvl2 ash" col = "0" text = "{{displaybvn}}" row = "2" visibility="{{  bvnstat ? 'visible' : 'collapsed'  }}"/>
+<Label class = "icon blue lvli center" horizontalAlignment = "center" objNode="bvn" tap = "switch" visibility="{{ ! bvnstat ? 'visible' : 'collapsed'  }}" row = "0" col = "1" text = "&#xf013;"/>
+<Label class = "icon blue lvli center" horizontalAlignment = "center"  visibility="{{  bvnstat ? 'visible' : 'collapsed'  }}" row = "0" col = "1" text = "&#xf013;"/>
+<Label class = "thin lvl2 white" col = "1"  row = "1" text = "Setup"  visibility="{{  !bvnstat ? 'visible' : 'collapsed'  }}" row = "1"/>
+<Label class = "thin lvl2 white" col = "1"  row = "1" text = "Okay"  visibility="{{  bvnstat ? 'visible' : 'collapsed'  }}" row = "1"/>
+</GridLayout><!--grid-->
+<GridLayout columns = "*, auto" rows = "auto, auto,auto,auto" class = "column" >
+<Label class = "common white lvl1" col = "0" text = "Bank Account Information" row = "0"/>
+<Label class = "thin lvl2 ash" col = "0" text = "No bank account set up yet" row = "1"  visibility="{{  ! bankstat ? 'visible' : 'collapsed'  }}"/>
+<Label class = "thin lvl2 ash" col = "0" text = "Bank Account Up to date " row = "1"  visibility="{{  bankstat ? 'visible' : 'collapsed'  }}"/>
+<Label class = "thin lvl2 ash" col = "0" text = "{{selectedbank}}" row = "2" visibility="{{  bankstat ? 'visible' : 'collapsed'  }}"/>
+<Label class = "thin lvl2 ash" col = "0" text = "{{displayaccount}}" row = "3" visibility="{{  bankstat ? 'visible' : 'collapsed'  }}"/>
+<Label class = "icon blue lvli center" horizontalAlignment = "center" objNode="account" tap = "switch"  row = "0" col = "1" text = "&#xf013;" visibility="{{  ! bankstat ? 'visible' : 'collapsed'  }}"/>
+<Label class = "icon blue lvli center" horizontalAlignment = "center"   row = "0" col = "1" text = "&#xf013;" visibility="{{  bankstat ? 'visible' : 'collapsed'  }}"/>
+<Label class = "thin lvl2 white" col = "1"  row = "1" text = "Setup" row = "1" visibility="{{  ! bankstat ? 'visible' : 'collapsed'  }}"/>
+<Label class = "thin lvl2 white" col = "1"  row = "1" text = "Okay"  visibility="{{  bankstat ? 'visible' : 'collapsed'  }}" row = "1"/>
+</GridLayout><!--grid-->
+<GridLayout columns = "*, auto" rows = "auto, auto,auto" class = "column" >
+<Label class = "common white lvl1" col = "0" text = "Eligibility" row = "0"/>
+<Label class = "thin lvl2 ash"  textWrap ="true" col = "0" text = "You are currently elligible to request for this amount" row = "1"/>
+<StackLayout col = "0" row = "2" class = "st" horizontalAlignment = "center" verticalAlignment = "center">
+<StackLayout class = "common blue lvl1" orientation = "horizontal"  row = "2" col = "0" >
+<Label class = "blue" text = "   N " />
+<Label class = "white" text = "{{eligibility}}" />
+</StackLayout>
+
+</StackLayout>
+</GridLayout><!--grid-->
+<GridLayout columns = "*, auto" rows = "auto, auto, *" class = "column" >
+<!--display when non veirified--><Label class = "common blue lvl1" col = "0" text = "Your Account is not setup" row = "0"  visibility="{{  !allverified  &amp;&amp; !accountstat &amp;&amp; !bvnstat ? 'visible' : 'collapsed'  }}" />
+<!--display when all veirified--><Label class = "common blue lvl1" col = "0" text = "Your Account is setup and upto date" row = "0" visibility="{{  allverified ? 'visible' : 'collapsed'  }}" />
+<!--display when only bvn veirified--><Label class = "common blue lvl1" col = "0" text = "BVN verified But account is not" row = "0" visibility="{{  !allverified  &amp;&amp; !accountstat &amp;&amp; bvnstat ? 'visible' : 'collapsed'  }}" />
+<!--display when only account veirified--><Label class = "common blue lvl1" col = "0" text = "Account Verified but BVN is not" row = "0" visibility="{{  !allverified  &amp;&amp;  !bvnstat  &amp;&amp;  accountstat ? 'visible' : 'collapsed'  }}" />
+<!--display when all veirified--><Label class = "thin lvl2 ash" col = "0" textWrap = "true" visibility="{{  allverified ? 'visible' : 'collapsed'  }}" text = "All your account information are accurately setup please proceed to request for funds and ge credited within 24 hours" row = "1"/>
+ <!--display when only bvn veirified--><Label class = "thin lvl2 ash" col = "0" textWrap = "true" visibility="{{  !allverified  &amp;&amp; !accountstat &amp;&amp; bvnstat ? 'visible' : 'collapsed'  }}" text = "No bank account set up yet, you may not be ale to access functions until u set up your account information on this profile, necessary info may include,your bank account and bank BVN is setup aprrpriately " row = "1"/>
+<!--display when only account veirified--><Label class = "thin lvl2 ash" col = "0" textWrap = "true" visibility="{{  !allverified  &amp;&amp;  !bvnstat  &amp;&amp;  accountstat ? 'visible' : 'collapsed'  }}" text = "No BVN set up yet, you may not be ale to access functions until u set up your account information on this profile, necessary info may include,  your BVN info  Account is set up" row = "1"/>
+<!--display when non veirified--><Label class = "thin lvl2 ash" col = "0" textWrap = "true" visibility="{{  !allverified  &amp;&amp;  !bvnstat  &amp;&amp;  !accountstat ? 'visible' : 'collapsed'  }}" text = "No bank account set up yet, you may not be ale to access functions until u set up your account information on this profile, necessary info may include, you debit card info, your BVN info " row = "1"/>
+
+ <Button class = "mgbtn"  minWidth = "80" col = "0" row = "2" text = "Register"   objNode="all"  tap = "switch"/>
+</GridLayout><!--grid-->
+ </StackLayout><!--main Grid-->
+ 
+ <!-- end of profile page--------------->
+ 
+ <!--request page this is a version of the right class visible only editable region brings in other right and set the values--------------------------------------------->
+ 
+ <StackLayout   orientation = "vertical"   class = "right" visibility="{{ request.main  ? 'visible' : 'collapsed' }}" >
+ <GridLayout rows = "*" columns = "*">
+  <StackLayout   orientation = "vertical"  row = "0" col = "0" visibility="{{ allverified &amp;&amp;!loading  ? 'visible' : 'collapsed' }}"   zIndex = "1" >
+ <!--child4-->
+<StackLayout horizontalAlignment = "left" orientation = "vertical" verticalAlignment = "center"  visibility="{{ request.child4  ? 'visible' : 'collapsed' }}">
+<GridLayout columns = "*, auto" rows = "auto,auto" class = "column"  visibility="{{ request.child4  ? 'visible' : 'collapsed' }}" >
+<Label class = "common white lvl1" col = "0" text = "{{tansactioninfo}}" row = "0"/>
+<Label class = "thin lvl1 ash" textWrap = "true" col = "0" text = "Your request is being processed" row = "1"  />
+</GridLayout><!--grid-->
+</StackLayout>
+<GridLayout columns = "*,auto" rows = "auto, auto auto,auto,auto" class = "column" visibility="{{ request.child4  ? 'visible' : 'collapsed' }}" >
+<Label class = "common white lvl1" col = "0" textWrap = "True" text = "Your loan of " row = "0"/>
+<Label class = "common blue lvl1 rtt" col = "0" text = "{{eligibility}}" row = "1"/>
+
+<Label class = "thin lvl2 ash" col = "0"  textWrap = "true" text = "is approved and you should get credited within the next 24 hours, thank you for using sprintloans " row = "1" />
+
+<Label class = "common blue lvl1 ash" col = "0" text = "{{ transactioninfo}} " row = "2" />
+
+</GridLayout><!--grid-->
+<GridLayout columns = "*" rows = "*" class = "column" visibility="{{ request.child4  ? 'visible' : 'collapsed' }}" >
+<StackLayout direction = "vertical">
+
+<StackLayout orientation = "vertical"  verticalAlignment = "center" horizontalAlignment = "center">
+<Label class = "lvl2indicator ash" textWrap = "true"  horizontalAlignment = "center" text = "If granted You are to pay back "/>
+<Label class = "lvlindicator blue"  verticalAlignment = "top"  text = "{{owing}}"/>
+
+</StackLayout>
+<StackLayout direction = "horizontal" verticalAlignment = "center" horizontalAlignment = "center">
+<Label class = "bigindicator blue" text = "&#xf058;"/>
+</StackLayout>
+<StackLayout direction = "vertical">
+<Label class = "lvl2indicator ash"  horizontalAlignment = "center" textWrap = "true" text = "To payback on or before "/>
+<Label class = "lvlindicator blue"  horizontalAlignment = "center" textWrap = "true" text = "{{returndate}} "/>
+
+</StackLayout>
+</StackLayout><!--main-->
+</GridLayout><!--grid-->
+<!--child4-->
+ <GridLayout  columns = "auto, *" class = "pd " rows = "auto" >
+<StackLayout col = "0"  row = "0"  orientation = "horizontal" verticalAlignment = "center">
+ <Label    class = "thin ash"  text = "Request"/>
+ <Label    class = "common blue" text = " for funds "/>
+ </StackLayout>
+  <StackLayout  row = "0"   orientation = "horizontal"   horizontalAlignment="right" col = "1"  >
+   <Label class = "icon ash" text = "&#xf2c7; " horizontalAlignment="right"/>
+   <Label class = "icon ash" text = "&#xf085;" horizontalAlignment="right"/>
+</StackLayout>
+</GridLayout ><!--first grid-->
+<GridLayout columns = "*,auto" rows = "auto, auto,auto" class = "column" visibility="{{ request.child1  &amp;&amp;!topay  ? 'visible' : 'collapsed' }}" >
+<Label class = "common white lvl1" col = "0" text = "Your current Point is" row = "0"/>
+<Label class = "common blue lvl1 rtt" col = "1" text = "{{points}}" row = "0"/>
+<Label class = "thin lvl2 ash" col = "0" text = "You are eligible to burrow up to " row = "1" />
+<Label class = "thin lvl2 ash rtt" col = "1" text = " {{eligibility}}" row = "1" />
+<Label class = "thin lvl2 ash" col = "0" text = "See the Point Mapping " row = "2" />
+<Label class = "icon blue lvli center" horizontalAlignment = "right"  visibility="{{  bvnstat ? 'visible' : 'collapsed'  }}" row = "2" col = "1" text = "&#xf097;"/>
+</GridLayout><!--grid-->
+  <StackLayout row = "0" col = "0" columns = "*" rows = "auto, auto, auto, *,* " class = "column2 nob"  visibility = "{{topay  &amp;&amp; !loading  ? 'visible' : 'collapsed' }}">
+<Label class = "common lvl111 whitef"   textWrap = "true"  col = "0" text = "{{owingexplain}}" row = "0"/>
+<Label class = " lvl222 ash bvv" textWrap = "true" col = "0" text = "{{owingdetails1}}" row = "1" />
+<Label class = " lvl222 ash bvv" textWrap = "true" col = "0" text = "{{owingdetails2}}" row = "2" />
+<Label class = " lvl222 ash bvv" textWrap = "true" col = "0" text = "{{owingdetails3}}" row = "3" />
+ <Button class = "mgbtnii ib nb" row = "4"   horizontalAlignment = "left"  verticalAlignment = "center" minWidth = "70"  text = "return"    tap = "" />
+
+ </StackLayout><!--grid--> 
+<GridLayout columns = "*" rows = "*" class = "column" visibility="{{ request.child2  &amp;&amp;!topay  ? 'visible' : 'collapsed' }}" >
+<StackLayout direction = "vertical">
+
+<StackLayout orientation = "vertical" verticalAlignment = "center">
+<Label class = "lvlindicator ash"  horizontalAlignment = "center" textWrap = "true" text = "Burrowing"/>
+<Label class = "lvl2indicator blue"  horizontalAlignment = "center" textWrap = "true" text = "{{eligibility}} "/>
+<Label class = "lvl2indicator ash"  horizontalAlignment = "center" textWrap = "true" text = "Naira"/>
+</StackLayout>
+<StackLayout orientation = "horizontal"  verticalAlignment = "center" horizontalAlignment = "center">
+<Label class = "lvl2indicator ash" textWrap = "true"  horizontalAlignment = "center" text = "Your are to pay back "/>
+<Label class = "lvlindicator blue"  verticalAlignment = "top"  text = "{{returnvalue}}"/>
+
+</StackLayout>
+<StackLayout direction = "horizontal" verticalAlignment = "center" horizontalAlignment = "center">
+<Label class = "bigindicator blue" text = "&#xf058;"/>
+</StackLayout>
+<StackLayout direction = "vertical">
+<Label class = "lvl2indicator ash"  horizontalAlignment = "center" textWrap = "true" text = "To payback on or before "/>
+<Label class = "lvlindicator blue"  horizontalAlignment = "center" textWrap = "true" text = "{{returndate}} "/>
+
+</StackLayout>
+<GridLayout columns = "*" rows = "auto,auto, *" class = "column"  >
+<Label class = "common white lvl1" col = "0" colSpan = "2" text = "Check your request parameters" row = "0"/>
+<Label class = "thin lvl2 ash" textWrap = "true" col = "0" colSpan= "2" text = "Ensure all your request parameters are correct, if successful, we are going to credit your account registered on the platform" row = "1"  />
+ <StackLayout row = "2" col = "0" orientation = "horizontal" horizontalAlignment = "center">
+ <Button class = "mgbtn333c"  horizontalAlignment = "center"  minWidth = "20" col = "0" row = "2" text = "&#xf053;"  objNode="request"  tap = "btntap" />
+ <Button class = "mgbtnii ib"  horizontalAlignment = "center"  minWidth = "80" col = "1" row = "2" text = "Request"    tap = "pay" />
+ </StackLayout>
+</GridLayout><!--grid-->
+</StackLayout><!--main-->
+</GridLayout><!--grid-->
+<GridLayout columns = "*,auto" rows = "auto, auto,auto" class = "column"  visibility="{{ request.child1  &amp;&amp;!topay  ? 'visible' : 'collapsed' }}" >
+<Label class = "common white lvl1" col = "0" text = "Increase Your Points" row = "0"/>
+<Label class = "icon blue lvli center" horizontalAlignment = "center"  visibility="{{  bvnstat ? 'visible' : 'collapsed'  }}" row = "1" col = "1" text = "&#xf1e1;"/>
+<Label class = "thin lvl2 white" col = "1"  row = "2" text = "Share"  visibility="{{  !bvnstat ? 'visible' : 'collapsed'  }}" row = "1"/>
+
+<Label class = "thin lvl2 ash" col = "0" textWrap = "true" text = "Find out ways by which you can increase your points and access even more loans with linient conditions " row = "1" />
+ <Button class = "mgbtnii"  minWidth = "80" col = "0" row = "2" horizontalAlignment = "left" text = "find Out"   objNode="request"  tap = "switch" />
+</GridLayout><!--grid-->
+
+<GridLayout columns = "*,auto" rows = "auto, auto,auto" class = "column"  visibility="{{ request.child1   &amp;&amp;!topay ? 'visible' : 'collapsed' }}" >
+<Label class = "common white lvl1" col = "0" text = "Select Amount" row = "0"/>
+<Slider value = "{{eligibility}}"  maxValue = "{{maxval}}" class = "sl" col = "0" row = "1" />
+<StackLayout class = "bgg" col = "1" row = "1"  verticalAlignment = "center" horizontalAlignment = "center" >
+<Label text = "{{eligibility}}" />
+</StackLayout>
+</GridLayout><!--grid-->
+<StackLayout horizontalAlignment = "left" orientation = "vertical" verticalAlignment = "center"  visibility="{{ request.child1  &amp;&amp;!topay  ? 'visible' : 'collapsed' }}">
+<GridLayout columns = "*, auto" rows = "auto,auto, *" class = "column"  visibility="{{ request.child1  ? 'visible' : 'collapsed' }}" >
+<Label class = "common white lvl1" col = "0" text = "Check your request parameters" row = "0"/>
+<Label class = "thin lvl2 ash" textWrap = "true" col = "0" text = "Ensure all your request parameters are correct, if successful, we are going to credit your account registered on the platform" row = "1"  />
+ <Button class = "mgbtnii ib"  horizontalAlignment = "left"  minWidth = "80" col = "0" row = "2" text = "Continue"    tap = "setret" />
+</GridLayout><!--grid-->
+
+
+</StackLayout>
+
+
+
+
+
+
+</StackLayout>
+  <AbsoluteLayout row = "0", cols = "0"  visibility="{{ loading &amp;&amp; allverified ? 'visible' : 'collapsed' }}">
+  <StackLayout  orientation = "vertical" class = "stack full" verticalAlignment = "center" horizontalAlignment = "center"  visibility="{{ loading ? 'visible' : 'collapsed' }}" >
+    <ActivityIndicator horizontalAlignment = "center"  verticalAlignment = "center"   busy= "{{loading}}" /> 
+  </StackLayout>
+ </AbsoluteLayout>
+   <AbsoluteLayout row = "0", col = "0"  visibility="{{ ! allverified ? 'visible' : 'collapsed'}}">
+  <StackLayout  orientation = "vertical" class = "stack full padding2" verticalAlignment = "top" horizontalAlignment = "center" visibility="{{ ! allverified ? 'visible' : 'collapsed'}}" >
+    <Label class = "thin lvl1 blue mtop"  textWrap = "true"  col = "0" text = "Not registered" row = "1" visibility="{{ ! allverified ? 'visible' : 'collapsed'}}" />
+    
+   <Label class = "thin lvl2 ash mtop"  textWrap = "true"  col = "0" visibility="{{ ! allverified ? 'visible' : 'collapsed'}}" text = "Please set up your account, you can not access the financial functions unless your account is set up click the button bellow to go to your profile" row = "1" />
+  <Button class = "mgbtn"  minWidth = "80" col = "0" row = "2" text = "profile Setup"  visibility="{{ ! allverified ? 'visible' : 'collapsed'}}"   objNode="profile"  tap = "switch"/>
+ </StackLayout>
+ </AbsoluteLayout> 
+ </GridLayout><!--switcher views-->
+ </StackLayout><!--request main Grid-->
+ 
+ <!-- end of request page-->
+ 
+  <!--return page this is a version of the right class visible only editable region brings in other right and set the values--------------------------------------------->
+ 
+ <StackLayout   orientation = "vertical"   class = "right" visibility="{{ return.main  ? 'visible' : 'collapsed' }}" >
+ <GridLayout rows = "*" columns = "*">
+  <StackLayout   orientation = "vertical"  row = "0" col = "0" visibility="{{ topay &amp;&amp;!loading  ? 'visible' : 'collapsed' }}"   zIndex = "1" >
+ <!--child4-->
+<StackLayout horizontalAlignment = "left" orientation = "vertical" verticalAlignment = "center"  visibility="{{ return.child4  ? 'visible' : 'collapsed' }}">
+<GridLayout columns = "*, auto" rows = "auto,auto" class = "column"  visibility="{{ return.child4  ? 'visible' : 'collapsed' }}" >
+<Label class = "common white lvl1" col = "0" text = "Thank you for your payment" row = "0"/>
+<Label class = "thin lvl1 ash" textWrap = "true" col = "0" text = "Your outstanding has being cleared" row = "1"  />
+</GridLayout><!--grid-->
+</StackLayout>
+<GridLayout columns = "*,auto" rows = "auto, auto auto,auto,auto" class = "column" visibility="{{ return.child4  ? 'visible' : 'collapsed' }}" >
+<Label class = "common white lvl1" col = "0" textWrap = "True" text = "Your can now request for more loans " row = "0"/>
+<Label class = "common blue lvl1 rtt" col = "0" text = "Sprintloans ambassador" row = "1"/>
+
+<Label class = "thin lvl2 ash" col = "0"  textWrap = "true" text = "thank you for using sprintloans " row = "1" />
+
+
+</GridLayout><!--grid-->
+<!--child4-->
+ <GridLayout  columns = "auto, *" class = "pd " rows = "auto" >
+<StackLayout col = "0"  row = "0"  orientation = "horizontal" verticalAlignment = "center">
+ <Label    class = "thin ash"  text = "Return "/>
+ <Label    class = "common blue" text = " Outstanding loans "/>
+ </StackLayout>
+  <StackLayout  row = "0"   orientation = "horizontal"   horizontalAlignment="right" col = "1"  >
+   <Label class = "icon ash" text = "&#xf2c7; " horizontalAlignment="right"/>
+   <Label class = "icon ash" text = "&#xf085;" horizontalAlignment="right"/>
+</StackLayout>
+</GridLayout ><!--first grid-->
+<GridLayout columns = "*,auto" rows = "auto, auto,auto" class = "column" visibility="{{ !return.child4  &amp;&amp;topay  ? 'visible' : 'collapsed' }}" >
+<Label class = "common white lvl1" col = "0" text = "Your outstanding loan is" row = "0"/>
+<Label class = "common blue lvl1 rtt" col = "1" text = "{{owing}}" row = "0"/>
+<Label class = "thin lvl2 ash" col = "0" text = "Paying back early earns you points" row = "1" />
+<Label class = "thin lvl2 ash" col = "0" text = "See the Point Mapping " row = "2" />
+<Label class = "icon blue lvli center" horizontalAlignment = "right"  visibility="{{  bvnstat ? 'visible' : 'collapsed'  }}" row = "2" col = "1" text = "&#xf097;"/>
+</GridLayout><!--grid-->
+  <StackLayout row = "0" col = "0" columns = "*" rows = "auto, auto, auto, *,*, * " class = "column2 nob"  visibility = "{{topay  &amp;&amp; !loading  ? 'visible' : 'collapsed' }}">
+<Label class = "common lvl111 whitef"   textWrap = "true"  col = "0" text = "{{owingexplain}}" row = "0"/>
+<Label class = " lvl222 ash bvv" textWrap = "true" col = "0" text = "{{owingdetails1}}" row = "1" />
+<Label class = " lvl222 ash bvv" textWrap = "true" col = "0" text = "{{owingdetails2}}" row = "2" />
+<Label class = " lvl222 ash bvv" textWrap = "true" col = "0" text = "{{owingdetails3}}" row = "3" />
+ <Button class = "mgbtnii ib nb" row = "4"   horizontalAlignment = "left"  verticalAlignment = "center" minWidth = "70"  text = "Pay with debit card"    tap = "paydebit" />
+
+ </StackLayout><!--grid--> 
+
+<GridLayout columns = "*,auto" rows = "auto, auto,auto" class = "column"  visibility="{{ !return.child14 &amp;&amp;!topay  ? 'visible' : 'collapsed' }}" >
+<Label class = "common white lvl1" col = "0" text = "Increase Your Points" row = "0"/>
+<Label class = "icon blue lvli center" horizontalAlignment = "center"  visibility="{{  bvnstat ? 'visible' : 'collapsed'  }}" row = "1" col = "1" text = "&#xf1e1;"/>
+<Label class = "thin lvl2 white" col = "1"  row = "2" text = "Share"  visibility="{{  !bvnstat ? 'visible' : 'collapsed'  }}" row = "1"/>
+
+<Label class = "thin lvl2 ash" col = "0" textWrap = "true" text = "Find out ways by which you can increase your points and access even more loans with linient conditions " row = "1" />
+ <Button class = "mgbtnii"  minWidth = "80" col = "0" row = "2" horizontalAlignment = "left" text = "find Out"   objNode="request"  tap = "switch" />
+</GridLayout><!--grid-->
+
+
+</StackLayout>
+  <AbsoluteLayout row = "0", cols = "0"  visibility="{{ loading &amp;&amp; allverified ? 'visible' : 'collapsed' }}">
+  <StackLayout  orientation = "vertical" class = "stack full" verticalAlignment = "center" horizontalAlignment = "center"  visibility="{{ loading ? 'visible' : 'collapsed' }}" >
+    <ActivityIndicator horizontalAlignment = "center"  verticalAlignment = "center"   busy= "{{loading}}" /> 
+  </StackLayout>
+ </AbsoluteLayout>
+   <AbsoluteLayout row = "0", col = "0"  visibility="{{ !topay ? 'visible' : 'collapsed'}}">
+  <StackLayout  orientation = "vertical" class = "stack full padding2" verticalAlignment = "top" horizontalAlignment = "center" visibility="{{ !topay ? 'visible' : 'collapsed'}}" >
+    <Label class = "thin lvl1 blue mtop"  textWrap = "true"  col = "0" text = "You have no outstanding " row = "1" visibility="{{ !topay? 'visible' : 'collapsed'}}" />
+    
+   <Label class = "thin lvl2 ash mtop"  textWrap = "true"  col = "0" visibility="{{ !topay ? 'visible' : 'collapsed'}}" text = "You can request for a quickloan by clicking the following button" row = "1" />
+  <Button class = "mgbtn"  minWidth = "80" col = "0" row = "2" text = "profile Setup"  visibility="{{ ! allverified ? 'visible' : 'collapsed'}}"   objNode="request"  tap = "switch"/>
+ </StackLayout>
+ </AbsoluteLayout> 
+ </GridLayout><!--switcher views-->
+ </StackLayout><!--request main Grid-->
+ 
+ <!-- end of return page-->
+
+</StackLayout>
+</GridLayout>
+</Page>

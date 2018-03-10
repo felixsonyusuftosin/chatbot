@@ -1,0 +1,71 @@
+.dark {background-color:#10152b; }
+.left{ background-color: rgba(0,0,0,0.4); border-right-style:ridge;  border-right-width:1; width:17%;  border-color:#222;}
+.right{ width:83%; z-index:2;  } .otherright{ width:83%; background-color:#fff; z-index:10; transform:translateX(400%); }
+.bel{text-align:center;  height:70;  width:100%; color:rgba(255,255,255,0.7); border-bottom-style:ridge; border-bottom-width:1; border-color:#222; }
+.i{ font-size:20; line-height:60;  font-family:"fontawesome-webfont";} .fa{ font-family:"fontawesome-webfont";}
+.span{font-size:10;  font-family:"Montserrat-Light"; color:rgba(255,255,255,0.4);  }
+.active{background-color:#009ee8;} .notactive{background-color:transparent;}
+.pin{background-image:url('~/images/city.jpg');  width:100%; height:100%; background-size:cover; background-position:center;  width:100%;  z-index:2; height:100%; left:0; top:0;}
+.cover{ background-color:rgba(0,0,0,0.6); width:100%; height:100%; }
+.mg{ margin: 40; padding:0 5;    box-sizing:border-box; border-radius:10px; height:40; margin-bottom:10; margin-top:10;   border-bottom-style:dashed;  border-bottom-width:1;  border-bottom-color:white; }
+.TextField{height:40; width:300;  background-color:transparent; font-family:"Lato-Light"; color:white;  border-style:none; text-align:center;}
+TextField{  border-style:none; height:100%; border-color:transparent; text-indent:10; }
+.error{font-family:"OpenSans"; color:#fff;  background-color:rgba(0,0,0,0.5); margin-top:-40; margin-bottom:40;   font-size:11; font-weight:500;  padding:10; width:80%;  box-sizing:border-box; border-style:solid; border-width:1; border-color:#fff; height:80; }
+.error2{font-family:"OpenSans"; color:#fff;  background-color:rgba(0,0,0,0.5);  margin-bottom:10;   font-size:11; font-weight:500;  padding:10; width:80%;  box-sizing:border-box; border-style:solid; border-width:1; border-color:#fff; height:80; }
+
+.h{line-height:50;  font-size:40; padding:5; color:#fff;  display:block; font-family:"fontawesome-webfont"; }
+.mgbtn{ margin: 40; padding:0 5;  font-family:"Montserrat-Light";  letter-spacing:0.1; min-width:80;    box-sizing:border-box;  border-style:solid; border-width:2px; border-color:#fff;  height:40; margin-bottom:0; margin-top:20; color:white; font-size:11; line-height:40; text-align:center; }
+.ii{font-size:20; margin:0; margin-top:10; box-sizing:border-box; width:30; text-align:center; line-height:45; color:#fff; line-height:45;  font-family:"fontawesome-webfont"; }
+.topbebas{font-family:"Montserrat-Light"; color:#fff;  box-sizing:border-box; padding:10 0;   text-align:center; font-size:16; line-height:15; letter-spacing:0;  font-weight:400; }
+.box{width:60; height:3; border-radius:1; background-color:#fff; margin-top:20;}  .padtob{padding:0 30; margin-top:-100; margin-bottom:50;}
+.mgbtnii{ margin: 0; padding:0 3;  font-family:"Montserrat-Light";  letter-spacing:0.1; width:100;   box-sizing:border-box;  border-style:solid; border-width:2px; background-color:rgba(0,0,0,0.2); border-color:rgba(255,255,255,0.4);  height:30; margin-bottom:0; margin-top:10; color:white; font-size:8; line-height:30; text-align:center; }
+
+/* careful*/
+.pd{box-sizing:border-box;  width:100%; padding:20 20; }
+.common{font-family:"Monserrat-Regular"; font-size:13; line-height:14; }
+.thin{font-family:"Monserrat-Light";  font-size:13; line-height:14;}
+.white{color:#fff;} .bg{background-color:#fff;}
+.ash{color:rgba(255,255,255,0.4);} 
+.grey{color:#222;}
+ .left2{width:50%;} .right2{width:50%;} .blue{color:#009ee8;}
+.icon{font-family:"fontawesome-webfont"; font-size:13; line-height:14; }
+ .column{padding:20 20;  border-top-style:ridge; border-top-width:1; border-color:#222;}   .center{text-align:center;} 
+ 
+  .column2{padding:20 20;  border-top-style:ridge; padding-bottom:10; border-top-width:1; border-color:#d2d2d2;}   .center{text-align:center;} 
+    .column2c{padding:2 20;  border-top-style:ridge; padding-bottom:10; border-top-width:1; border-color:#d2d2d2; width:100%; } 
+ .lvl1{font-size:13;  font-family:"Lato-Medium";  line-height:20;}  .lvli{font-size:13; letter-spacing:0.1;  line-height:20;} .lvl2{font-size:12;}
+ .st{height:40; background-color:rgba(255,255,255,0.05); margin-top:10;  width:100%; }
+
+ .mgbtn2{ margin: 40; margin-bottom:15;  font-family:"Montserrat-Light";  letter-spacing:0.1; width:50%;    box-sizing:border-box; background-color:#009ee8; border-radius:2; height:35; margin-bottom:0; margin-top:20; color:white; font-size:13 ;  text-align:center; }
+.mgb{  padding:0 5;   background-color:#ededed;  color:#666;  box-sizing:border-box;  font-size:12; border-radius:2px; height:30;  margin-top:5; margin-bottom:0;  border-style:solid; border-width:1; border-color:#d2d2d2; }
+.nob{border-style:none; border-color:#fff;} 
+.mgbtn3{  font-family:"Montserrat-Light";  letter-spacing:0.1; min-width:50%;    box-sizing:border-box; background-color:#009ee8; border-radius:2; height:35;  color:white; font-size:13 ;  text-align:center; }
+.mgbtn33, .mgbtn333c{ margin-right:2; padding:0 5;   font-family:"fontawesome-webfont";  letter-spacing:0.1; width:50;    box-sizing:border-box; border-color:#009ee8; border-width:1px; border-style:solid; border-radius:2; height:35;  color:#009ee8; font-size:18 ;  text-align:center; }
+.mgbtn333c{margin: 0; padding:0 3;  height:30; margin-bottom:0; margin-top:10; margin-right:7;  font-size:8; line-height:30;  }
+.tt, .mgb TextField{height:100%; width:300;  font-family:"Lato-Light";  background-color:#ededed;  color:#222;   border-style:none; font-size:16;   }
+AbsoluteLayout{width:100%; z-index:10; height:100%;  top:0; left:0;}
+.stack{ background-color:rgba(0,0,0,0.8); width:180; height:150; border-radius:3; box-shadow:2px 2px 5px rgba(0,0,0,0.3);  }
+.full{height:100%; width:100%;} .one{z-index:1;}
+.ashb{background-color:rgba(255,255,255,0.4);}
+ListPicker{background-color:rgba(255,255,255,0.4);}
+ .colu{padding:25 5; border-top-style:ridge; border-top-width:1; border-color:#d2d2d2;}   .center{text-align:center;} 
+  .lvl1{font-size:14;  font-family:"Lato-Medium";  line-height:24;}  .m4{margin:10 20; } .m2{margin:5 20; }
+.padding{padding:0 30; box-sizing:border-box; } .padding2{padding:40 30; box-sizing:border-box; } .pp{padding:3 3; }
+.mtop{margin-bottom:10; }
+   .lvl11{font-size:18;  font-family:"Lato-Medium";  line-height:24;} .b{font-weight:700; transform:scale(1.1);}
+.bgg{background-color:rgba(0,0,0,0.4); width:50; height:40; line-height:40; font-family:"Montserrat-Light";  border-color:#009ee8; border-width:1; border-style:solid;  color:#fff;  text-align:center; font-size:10; }
+.rtt{text-align:right;} .sl{width:70%;  }
+.ashg{color:#333;} .lvl111{font-family:"Lato-Semibold"; margin-bottom:10; color:#009ee8; font-weight:600; font-size:16; line-height:18; letter-spacing:0.1;}
+.lvl222{font-family:"Raleway-Medium";  font-size:12; line-height:14; margin-bottom:6; margin-top:3; } .nob{border-color:#fff; border-style:none;}
+.fullheight{height:100%;} .red{background-color:red;} .dgray{font-size:10;  color:#222; font-family:"BebasNeue"; }  .dgray1{font-size:12; font-weight:600; margin-bottom:5;   color:#009ee8; font-family:"OpenSans-Light"; }
+.icobox{width:50; height:50; border-radius:2; margin:5; line-height:50; text-align:center; font-size:25; color:#fff; font-family:"fontawesome-webfont"; }
+.facebook{background-color:#3B5998;} .twitter{background-color:#62C8F8;} 
+.instagram{background-color:#FF0000;} .linkedin{background-color:#0076B4;}
+.cu{color:#009ee8; font-size:12;  font-family:"fontawesome-webfont"; margin-right:20; } .ib{ background-color:#009ee8; border-style:none; border-color:transparent;}
+.bigindicator{line-height:70;  font-size:80; padding:5; color:#fff;  text-align:center; display:block; font-family:"fontawesome-webfont"; }
+  .lvlindicator{font-size:28;  font-family:"Lato-Medium";  line-height:24;} 
+   .lvl2indicator{font-size:18;  font-family:"Monteserrat-Black";  line-height:24;} 
+   .blueb{color:#009ee8;} .fa{font-family:"fontawesome-webfont";}
+   .bggg{ background:#ededed;  z-index: 3000; }
+   .ok{background-color:#10152b;   height:45; width:100%; padding-right:5; margin-bottom:5;  } WebView{margin-top:0;}
+   .nb{margin-left:50;} .whitef{color:#fff;} .bvv{margin-bottom:10; font-size:13; color:#f0f0f0;}

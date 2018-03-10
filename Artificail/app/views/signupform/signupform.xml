@@ -1,0 +1,55 @@
+<Page loaded="pageLoaded"  actionBarcollapsed="true"  actionBarHidden="true">
+  <ScrollView>
+
+<GridLayout rows = "*, auto, auto,  auto, auto, auto" columns = "*" class = "padding">
+  <AbsoluteLayout row = "0", cols = "0"  visibility="{{ showLoading ? 'visible' : 'collapsed' }}">
+ </AbsoluteLayout>
+<StackLayout  row = "0" verticalAlignment = "bottom" horizontalAlignment = "center"  visibility="{{ !showLoading ? 'visible' : 'collapsed' }}" >
+<StackLayout class = "error" row = "1" orientation = "horizontal" visibility="{{ showdetails ? 'visible' : 'collapsed' }}" >
+  <Label class  = "h"  text = "&#xf071;" />
+  <Label textWrap = "true" text = "{{details}}" />
+</StackLayout>
+  <Label  class = "topbebas" text = "SIGN UP "/>  
+  <Label class = "box"  verticalAlignment = "center" />
+</StackLayout>
+
+<StackLayout  row = "1" class = "arrange" verticalAlignment = "top" horizontalAlignment = "center">
+<StackLayout class = "mg"  rows= "auto" orientation = "horizontal">
+<Label  class = "i" horizontalAlignment = "left"   text = "&#xf2c0;" row = "0" column = "0" />
+ <TextField hint="Email" keyboardType="email" text = "{{username}}"   horrizontalAlgnment = "center" column = "1" row= "0" autocorrect="true" autocapitalizationType="none"  />
+</StackLayout>
+<StackLayout class = "mg"  rows= "auto" orientation = "horizontal">
+<Label  class = "i" horizontalAlignment = "left"   text = "&#xf023;" row = "0" column = "0" />
+ <TextField hint="Password"  text =  "{{password}}" horrizontalAlgnment = "center" column = "1" row= "0" secure = "true" autocorrect="false" autocapitalizationType="none"   />
+</StackLayout>
+<StackLayout class = "mg"  rows= "auto" orientation = "horizontal">
+<Label  class = "i" horizontalAlignment = "left"   text = "&#xf023;" row = "0" column = "0" />
+ <TextField hint="Telephone Number" keyboardType="phone"  text = "{{telephone}}"  horrizontalAlgnment = "center" column = "1" row= "0" secure = "true" autocorrect="true" autocapitalizationType="none"   />
+</StackLayout>
+<StackLayout class = "mg"  rows= "auto" orientation = "horizontal">
+<Label  class = "i" horizontalAlignment = "left"   text = "&#xf023;" row = "0" column = "0" />
+ <TextField hint="Full Name" text = "{{name}}"    horrizontalAlgnment = "center" column = "1" row= "0" autocorrect="true" autocapitalizationType="true"  />
+</StackLayout>
+</StackLayout>
+
+<StackLayout row = "2" verticalAlignment = "top" horizontalAlignment = "center" >
+ <Button class = "mgbtn"  tap = "realsignup" text = "SIGN UP" visibility="{{ !showLoading ? 'visible' : 'collapsed' }}" />
+ <ActivityIndicator horizontalAlignment = "center"  verticalAlignment = "center"   busy= "{{ showLoading}}" />
+</StackLayout> 
+
+<StackLayout row = "4" orientation = "horizontal" horizontalAlignment = "center" verticalAlignment = "center">
+<Label class = "open" text = "Have an account ?" />
+<Label class = "open bb" text = "Sign in" />
+</StackLayout>
+<StackLayout class = "under"  row = "5" horizontalAlignment = "center"  orientation = "vertical">
+ <StackLayout  horizontalAlignment = "center"  orientation = "horizontal"> <Label class = "c1" text = "Privacy" /> <label class = "c1" text = "Legal" /></StackLayout>
+ <Label editable="false"  textWrap="true" class = "clm class" text = "Copyright &copy; 2017 Sprint Loans24. All right reserved"/>
+ <Label editable="false" textWrap="true"  class = "class" text = "Consumer advisory - Sprint Loans LTD, the holder of Sprint Loans 24 reserve the right to distribution, and authorizations of loans as it deem fit, we require access to your financial information like bank records and BVN information, It currently operates only in Nigeria."/>
+</StackLayout>
+
+</GridLayout>
+   
+
+  </ScrollView>
+
+</Page>

@@ -1,0 +1,37 @@
+<Page loaded="pageLoaded"  actionBarHidden="false">
+
+
+<GridLayout rows = "auto, auto, *, auto" columns = "*" class = "padding">
+
+<StackLayout  row = "0" verticalAlignment = "bottom" horizontalAlignment = "center">
+  <Label  class = "topbebas" text = "VERIFY OTP"/>  
+  <Label class = "box"  verticalAlignment = "center" />
+</StackLayout>
+
+<StackLayout  row = "1" class = "arrange" verticalAlignment = "top" horizontalAlignment = "center">
+<StackLayout class = "mg"  rows= "auto" orientation = "horizontal">
+<Label  class = "i" horizontalAlignment = "left"   text = "&#xf2c0;" row = "0" column = "0" />
+ <TextField hint="One Time Pin (OTP)" keyboardType="phone" text = "{{otp}}"   horrizontalAlgnment = "center" column = "1" row= "0" autocorrect="false" autocapitalizationType="none"  />
+</StackLayout>
+</StackLayout>
+
+<StackLayout row = "2" verticalAlignment = "top" horizontalAlignment = "center" >
+ <Button class = "mgbtn"  onTap = "authenticate" text = "Continue"/>
+</StackLayout>
+
+
+<StackLayout row = "3" orientation = "horizontal" horizontalAlignment = "center" verticalAlignment = "center">
+<Label class = "open" text = "Have an account ?" />
+<Label class = "open bb" text = "Sign in" />
+</StackLayout>
+<StackLayout class = "under"  row = "5" horizontalAlignment = "center"  orientation = "vertical">
+ <StackLayout  horizontalAlignment = "center"  orientation = "horizontal"> <Label class = "c1" text = "Privacy" /> <label class = "c1" text = "Legal" /></StackLayout>
+ <Label editable="false"  textWrap="true" class = "clm class" text = "Copyright &copy; 2017 Sprint Loans24. All right reserved"/>
+ <Label editable="false" textWrap="true"  class = "class" text = "Consumer advisory - Sprint Loans LTD, the holder of Sprint Loans 24 reserve the right to distribution, and authorizations of loans as it deem fit, we require access to your financial information like bank records and BVN information, It currently operates only in Nigeria."/>
+</StackLayout>
+
+</GridLayout>
+   
+
+
+</Page>

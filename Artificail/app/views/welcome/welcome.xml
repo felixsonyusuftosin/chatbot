@@ -1,0 +1,25 @@
+<Page loaded="pageLoaded" class = "lbg" actionBarHidden="true" id="logocontainer2">
+<GridLayout rows = "auto auto, *, auto, *" columns = "*" class = "padding">
+<StackLayout row = "1" id = "two" verticalAlignment = "top" horizontalAlignment = "center"> 
+    <Image stretch = "aspectFit" class = "logo"  src="~/images/Logo_name5.png"   />
+       <Label  class = "topbebas"  text = "Fast and Secure Loans "/>  
+ </StackLayout>
+   <StackLayout row = "2" id = "three" horizontalAlignment="center"  verticalAlignment = "middle">
+      <Label class = "top" text = "Welcome"/>
+      <Label class = "mid" text = "Access loans safe and easy within 24 hours"/>
+       <Label class = "mid" text = "Fast and Quick Loans"/>
+       <StackLayout orientation = "horizontal" horizontalAlignment = "center">
+          <Label class = "font-awesome" horrizontalAlignment = "left" text = "&#xf068; " row = "1" />
+          <Label class = "whitef" horrizontalAlignment = "center" text = "&#xf068; " row = "1" />
+          <Label class = "font-awesome" horrizontalAlignment = "right" text = "&#xf068; " row = "1" />
+       </StackLayout>
+   </StackLayout>   
+   <StackLayout  row = "3"   id = "four"   horrizontalAlignment = "center" verticalAlignment = "top"  >
+   <Button class = "btn" text = "Get Started"  onTap = "login" />
+   </StackLayout>
+    <StackLayout row = "4" id = "hh" class = "hh">  
+    </StackLayout>     
+    </GridLayout>
+
+
+</Page>
