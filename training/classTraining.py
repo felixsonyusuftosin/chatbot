@@ -91,6 +91,8 @@ class human_being:
         if bmi > 7:
             yourReport = reports['overweight']
         yourReport['score'] = bmi
+        return 'Hey {} : pease the following consoideration are important {}, currently ,  {} , Your Bmi is  {} '.format(
+            yourReport['name'], yourReport['advice'], yourReport['report'], yourReport['score'])
 
 def generate_reports():
     # generates directory and tells oursystem  to user our current path
@@ -113,3 +115,17 @@ def generate_reports():
         f.write(message)
         f.close()
 generate_reports()
+
+
+'''
+TODO To understand this exercise 
+Read .
+ List Varibale Types
+ Dictionaries
+ Iterations ( Loops  - For loops) 
+ Files io in python
+ Extension : 
+ Can you make sure that reports.txt file is formated to wite this reports in a readanle format 
+ perhabs as a table 
+ Can you extend the class to take in career varibles and advice on what a persons career path should be 
+'''
