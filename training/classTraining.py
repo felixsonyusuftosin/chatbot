@@ -54,6 +54,44 @@ class human_being:
         if (self.color.lower().strip() == 'white'):
             print ('he is an asian')
             return 'white'
+    def career(self, color, bmi):
+        color = color.strip().lower()
+        self.color = color
+        race = self.race()
+        bmi = bmi.strip().lower()
+        # race=('black', 'white', 'asian')
+        # bmi=('overweight', 'optimal', 'starvation')
+        if race == 'black' and bmi == 'overweight':
+            print('I cant tell what the future holds for you')
+            return 'overweight black person'
+        if race == 'white' and bmi == 'overweight':
+            print ('I cant tell what the future holds for you')
+            return 'overweight white person'
+        if race == 'asian' and bmi == 'overweight':
+            print ('I cant tell what the future holds for you')
+            return 'overweight asian folk'
+        if race == 'black' and bmi == 'optimal':
+            print ('wow, way to go')
+            return 'fit and ready'
+        if race == 'white' and bmi == 'optimal':
+            print ('wow, way to go')
+            return 'fit and ready'
+        if race == 'asian' and bmi == 'optimal':
+            print ('wow, way to go')
+            return 'fit and ready'
+        if race == 'black' and bmi == 'starvation':
+            print ('you wont have a future if you dont eat')
+            return 'bleak future'
+        if race == 'white' and bmi == 'starvation':
+            print ('you wont have a future if you dont eat')
+            return 'bleak future'
+        if race == 'asian' and bmi == 'starvation':
+            print ('you wont have a future if you dont eat')
+            return 'bleak future'
+        else:
+            print ('Nothing to display')
+                
+
     # defines a function that measures the BMI and gives recommendation
     ''' Assumptions a dfit BMI is between 5 and 7
      anything below means starvation and anythoig above means overweight
@@ -108,10 +146,11 @@ def generate_reports():
         try:
             f = open('reports.txt', 'a')
         except IOError:
-            f = open('reports.txt', 'w+')
+            f = open('reports.txt', 'a+')
         report = i.calculate_bmi()
+        career = i.career(i.color, 'overweight')
         race = i.race()
-        message = '{}, |  this is a {} man'.format(report, race)
+        message = '{}, |  this is a {} man and new message - {} '.format(report, race, career)
         f.write(message)
         f.close()
 generate_reports()
